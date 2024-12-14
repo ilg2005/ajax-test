@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\AddressController;
 
 /* Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -14,9 +15,7 @@ use Inertia\Inertia;
     ]);
 }); */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
+Route::get('/', [AddressController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
